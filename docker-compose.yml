@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  php7php8:
+    image: oliverlundquist/php7php8:1.2.0
+    environment:
+      PHP7BIN: /root/.phpbrew/php/php-7.4.33/bin/php
+      PHP8BIN: /root/.phpbrew/php/php-8.2.11/bin/php
+      PHP7APP: /var/app/current/php7app
+      PHP8APP: /var/app/current/php8app
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/var/app/current
+    working_dir: /var/app/current
+    command: ["php", "-S", "0.0.0.0:8080"]

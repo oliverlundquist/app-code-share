@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  php7php8:
+    image: oliverlundquist/php7php8:1.2.0
+    build:
+      context: .
+      dockerfile: Dockerfile

@@ -21,8 +21,8 @@ $key    = ftok($file, 'T');
 $memory = shmop_open($key, 'c', 0644, 1024);
 $size   = shmop_size($memory);
 $input  = shmop_read($memory, 0, $size);
-echo $input . PHP_EOL;
 shmop_delete($memory);
+echo $input . PHP_EOL;
 
 // SysV Message Queues
 // $file   = "/tmp/ipc-message-queues";
